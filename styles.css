@@ -1,0 +1,487 @@
+/* ===================================================================
+   H&A Tech — "Out of the Box"
+   Design tokens
+   =================================================================== */
+
+:root {
+  --navy: #14213D;
+  --navy-soft: #1E2E52;
+  --blue: #2D8FC9;
+  --blue-deep: #1E6FA3;
+  --paper: #F6F3EC;
+  --paper-dim: #ECE7DA;
+  --amber: #FBC056;
+  --teal: #1CA9A0;
+  --magenta: #C23B8C;
+  --ink: #14213D;
+  --ink-soft: #4B5670;
+  --line: rgba(20, 33, 61, 0.16);
+
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --max-w: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.4em 0;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1em 0; max-width: 62ch; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Nav ---------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.brand img { height: 34px; width: auto; }
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--navy);
+  border-bottom-color: var(--blue);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    padding: 4px 24px 16px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .nav-toggle { display: inline-block; }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--navy-soft); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.btn-outline:hover { background: var(--navy); color: var(--paper); }
+
+/* ---------- Corner-bracket motif ----------
+   A recurring structural device echoing PCB test-point
+   markers in the logo, used instead of card shadows. */
+
+.bracket {
+  position: relative;
+  border: 1px solid var(--line);
+  padding: 28px;
+  background: #fff;
+}
+
+.bracket::before,
+.bracket::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--blue);
+}
+
+.bracket::before {
+  top: -1px; left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.bracket::after {
+  bottom: -1px; right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ---------- Trace divider ---------- */
+
+.trace {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--blue), var(--blue) 8px,
+    transparent 8px, transparent 14px
+  );
+  border: none;
+  margin: 0;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: var(--navy);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.hero-copy .eyebrow-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero-copy .eyebrow-line .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+.hero-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--teal);
+  margin: 0 0 6px 0;
+}
+
+.hero h1 { color: var(--paper); }
+.hero h1 span { color: var(--blue); }
+
+.hero p.lede {
+  color: #C7CEDE;
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn-outline {
+  border-color: #4A5A80;
+  color: var(--paper);
+}
+.hero-actions .btn-outline:hover { background: #223362; }
+
+.hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-art img {
+  width: 100%;
+  max-width: 340px;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.35));
+}
+
+@media (max-width: 780px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-top: 44px; padding-bottom: 40px; }
+  .hero-art { order: -1; }
+  .hero-art img { max-width: 220px; }
+}
+
+/* ---------- Section rhythm ---------- */
+
+section { padding: 64px 0; }
+section.tight { padding: 44px 0; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.section-head p { margin: 0; color: var(--ink-soft); }
+
+/* ---------- About strip ---------- */
+
+.about-strip {
+  background: var(--paper-dim);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-single {
+  max-width: 640px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.about-single p {
+  color: var(--ink-soft);
+  margin: 0 auto;
+}
+
+/* ---------- Featured kit ---------- */
+
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.featured-media {
+  aspect-ratio: 4/3;
+  background: var(--navy);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-media svg { width: 60%; height: 60%; }
+
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 780px) {
+  .featured { grid-template-columns: 1fr; }
+}
+
+/* ---------- Card grid (products teaser / products page) ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.product-card h3 { margin-top: 18px; }
+.product-card .price { color: var(--blue-deep); font-weight: 600; margin-bottom: 10px; }
+.product-card .icon-wrap {
+  height: 160px;
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -28px -28px 0 -28px;
+  width: calc(100% + 56px);
+  border-bottom: 1px solid var(--line);
+}
+.product-card .icon-wrap svg { width: 72px; height: 72px; }
+
+/* ---------- Instructions page ---------- */
+
+.materials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px 24px;
+}
+
+.materials-list li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.materials-list li::before {
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--blue);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.safety-note {
+  background: #FDF1DC;
+  border-left: 3px solid var(--amber);
+  padding: 16px 20px;
+  margin: 32px 0;
+}
+.safety-note strong { font-family: var(--font-display); }
+
+.steps { counter-reset: step; }
+
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.step:last-child { border-bottom: 1px solid var(--line); }
+
+.step .num {
+  counter-increment: step;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--blue);
+}
+.step .num::before { content: counter(step, decimal-leading-zero); }
+
+.step h3 { margin-bottom: 6px; }
+.step p:last-child { margin-bottom: 0; }
+
+/* ---------- QR / footer ---------- */
+
+.qr-block {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.qr-block .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.qr-block h2 { color: var(--paper); }
+.qr-block p { color: #C7CEDE; }
+
+.qr-box {
+  background: #fff;
+  padding: 12px;
+  flex-shrink: 0;
+}
+.qr-box img { width: 140px; height: 140px; }
+
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.footer-row .brand img { height: 26px; }

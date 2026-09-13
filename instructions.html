@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Instructions | H&amp;A Tech</title>
+<meta name="description" content="Instructions for building the H&A Tech HoloCube STEM kit.">
+<link rel="icon" href="assets/logo_color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo_color.png" alt="H&A Tech logo">
+      H&amp;A Tech
+    </a>
+    <button class="nav-toggle" aria-expanded="false">Menu</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="instructions.html" aria-current="page">Instructions</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: 8px;">
+  <div class="wrap" style="grid-template-columns: 1fr; padding-bottom: 40px;">
+    <div class="hero-copy">
+      <div class="eyebrow-line"><span class="dot"></span> HoloCube STEM Kit</div>
+      <h1>Build <span>instructions.</span></h1>
+      <p class="lede">Everything you need to assemble the HoloCube, from unboxing the parts to uploading your first image.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What's in the box</h2>
+      <p>One kit builds one HoloCube.</p>
+    </div>
+    <ul class="materials-list">
+      <li>3D printed enclosure (PLA)</li>
+      <li>0.96&Prime; OLED display (B/W)</li>
+      <li>ESP32 C3 Super Mini</li>
+      <li>1&Prime; beam splitting cube</li>
+      <li>Stranded/solid wire</li>
+      <li>(4) M2x4 screws</li>
+      <li>(4) M2x6 screws</li>
+      <li>(4) M2 heat set screws</li>
+      <li>T6 screwdriver or 1.5mm hex key</li>
+    </ul>
+
+    <div class="section-head" style="margin-top: 40px;">
+      <h2>Tools you'll need</h2>
+      <p>Not included in the kit.</p>
+    </div>
+    <ul class="materials-list">
+      <li>Soldering kit</li>
+      <li>USB C data cable</li>
+      <li>Wire cutter and stripper</li>
+    </ul>
+
+    <div class="safety-note">
+      <strong>Before you start:</strong> This build involves a soldering iron, which gets hot enough to burn skin and melt materials. Students should build under adult or instructor supervision, in a ventilated area, with safety glasses on for any wire cutting or stripping.
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills you'll learn</h2>
+    </div>
+    <div class="card-grid">
+      <div class="bracket">
+        <h3>Soldering</h3>
+        <p>Joining a wire to a component pin with heat and solder, the core skill behind almost all electronics assembly.</p>
+      </div>
+      <div class="bracket">
+        <h3>Wire prep</h3>
+        <p>Stripping insulation and splicing stranded or solid wire cleanly enough to hold a solid connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Assembly Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Prep your wires</h3>
+          <p>Cut the wire lengths you'll need to connect the OLED to the ESP32. Strip about 5mm of insulation from each end with the wire stripper, and twist stranded ends so they don't fray.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Solder the display to the microcontroller</h3>
+          <p>Solder each wire from the OLED's pins (power, ground, and the two data lines) to the matching pins on the ESP32 C3 Super Mini. Double check each joint is shiny and solid, not a cold, dull blob.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Seat the electronics in the enclosure</h3>
+          <p>Set the ESP32 and OLED into their printed mounts. Use the M2 heat set screws to install threaded inserts if your enclosure calls for them, then secure the board with the M2x4 screws.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Mount the beam splitter cube</h3>
+          <p>Place the 1&Prime; beam splitting cube in the top of the enclosure at the angle marked on the print. It should seat snugly in its printed mount without blocking the optical path.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Close up the case</h3>
+          <p>Fit the enclosure halves together and fasten with the M2x6 screws using the T6 screwdriver or 1.5mm hex key.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div>
+          <h3>Connect and upload your first image</h3>
+          <p>Plug in the USB C cable to power on the board. On your phone or laptop, go into your WiFi settings and connect to the HoloCube's network, then open the page that appears to upload an image or GIF. It'll split into four quadrants and reflect together into a floating image above the cube.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a class="brand" href="index.html">
+      <img src="assets/logo_bw.png" alt="H&A Tech logo">
+      H&amp;A Tech
+    </a>
+    <span>&ldquo;Out of the Box&rdquo;</span>
+    <span>hello@handatech.example</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
